@@ -61,14 +61,16 @@ public class PostcardDomBuilder implements PostcardBuilder {
     private Postcard buildPostcard(Element postcardElement, PostcardTag postcardType) {
         Postcard postcard;
         switch (postcardType) {
-            case GREETING_POSTCARD:
+            case GREETING_POSTCARD -> {
                 postcard = new GreetingPostcard();
-                postcard.se
-                break;
-            case ADVERTISING_POSTCARD:
+            }
+            case ADVERTISING_POSTCARD -> {
                 postcard = new AdvertisingPostcard();
                 postcard.setService("");
-                break;
+            }
+            default:
+                lo
+
         }
         return postcard;
     }
