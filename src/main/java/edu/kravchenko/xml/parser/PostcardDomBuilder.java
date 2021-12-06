@@ -2,7 +2,6 @@ package edu.kravchenko.xml.parser;
 
 import edu.kravchenko.xml.entity.*;
 import edu.kravchenko.xml.exception.PostcardException;
-import edu.kravchenko.xml.validator.PostcardXmlValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,19 +14,17 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class PostcardDomBuilder implements PostcardBuilder {
+public class PostcardDomBuilder extends PostcardBuilder {
     private static final Logger logger = LogManager.getLogger();
-    private List<Postcard> postcards = new ArrayList<>();
     private DocumentBuilder docBuilder;
 
-    public PostcardDomBuilder() throws PostcardException {
+    public PostcardDomBuilder() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = factory.newDocumentBuilder();
@@ -102,10 +99,5 @@ public class PostcardDomBuilder implements PostcardBuilder {
         NodeList nList = element.getElementsByTagName(elementName);
         Node node = nList.item(0);
         return node.getTextContent();
-    }
-
-    @Override
-    public List<Postcard> getPostcards() {
-        return postcards;
     }
 }

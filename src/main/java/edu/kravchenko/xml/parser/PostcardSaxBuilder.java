@@ -1,6 +1,5 @@
 package edu.kravchenko.xml.parser;
 
-import edu.kravchenko.xml.entity.Postcard;
 import edu.kravchenko.xml.exception.PostcardException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -12,11 +11,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
-import java.util.List;
 
-public class PostcardSaxBuilder implements PostcardBuilder {
+public class PostcardSaxBuilder extends PostcardBuilder {
     private static final Logger logger = LogManager.getLogger();
-    private List<Postcard> postcards;
 
     public PostcardSaxBuilder() throws PostcardException {
     }
@@ -31,6 +28,7 @@ public class PostcardSaxBuilder implements PostcardBuilder {
             reader.setContentHandler(postcardHandler);
             reader.setErrorHandler(new PostcardErrorHandler());
             reader.parse(filePath);
+            postcards = postcardHandler.getPostcards();
         } catch (SAXException e) {
             logger.log(Level.ERROR, "Error while parsing file {}; message {}", filePath, e.getMessage());
         } catch (IOException e) {
@@ -38,10 +36,5 @@ public class PostcardSaxBuilder implements PostcardBuilder {
         } catch (ParserConfigurationException e) {
             logger.log(Level.ERROR, "Error while configuration; message {}", e.getMessage());
         }
-    }
-
-    @Override
-    public List<Postcard> getPostcards() {
-        return postcards;
     }
 }

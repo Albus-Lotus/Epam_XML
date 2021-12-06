@@ -5,25 +5,22 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class PostcardHandler extends DefaultHandler {
     private static final char HYPHEN = '-';
     private static final char UNDERSCORE = '_';
-    private List<Postcard> postcards;
+    private Set<Postcard> postcards;
     private Postcard current;
     private PostcardTag currentXmlTag;
     private EnumSet<PostcardTag> withText;
 
     public PostcardHandler() {
-        postcards = new ArrayList<>();
+        postcards = new HashSet<>();
         withText = EnumSet.range(PostcardTag.THEME, PostcardTag.ORGANIZATION);
     }
 
-    public List<Postcard> getPostcards() {
+    public Set<Postcard> getPostcards() {
         return postcards;
     }
 
