@@ -43,7 +43,7 @@
       <complexContent>
          <extension base="tns:Postcard">
             <sequence>
-               <element name="service" type="tns:Service"/>
+               <element name="organization" type="tns:Organization"/>
             </sequence>
          </extension>
       </complexContent>
@@ -94,7 +94,7 @@
       </restriction>
    </simpleType>
 
-   <simpleType name="Service">
+   <simpleType name="Organization">
       <restriction base="string">
          <minLength value="3"/>
          <maxLength value="20"/>

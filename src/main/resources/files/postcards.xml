@@ -90,7 +90,7 @@
         <country>belarus</country>
         <year>2001</year>
         <valuable>collectible</valuable>
-        <service>pharmacy</service>
+        <organization>pharmacy</organization>
     </advertising-postcard>
 
     <advertising-postcard id="51" author="Snowman">
@@ -99,7 +99,7 @@
         <country>england</country>
         <year>1995</year>
         <valuable>thematic</valuable>
-        <service>pharmacy</service>
+        <organization>pharmacy</organization>
     </advertising-postcard>
 
     <advertising-postcard id="57">
@@ -108,7 +108,7 @@
         <country>england</country>
         <year>2001</year>
         <valuable>historical</valuable>
-        <service>bmw</service>
+        <organization>bmw</organization>
     </advertising-postcard>
 
     <advertising-postcard id="63">
@@ -117,7 +117,7 @@
         <country>england</country>
         <year>1956</year>
         <valuable>collectible</valuable>
-        <service>milka</service>
+        <organization>milka</organization>
     </advertising-postcard>
 
     <advertising-postcard id="67" author="Yan">
@@ -126,7 +126,7 @@
         <country>england</country>
         <year>2001</year>
         <valuable>collectible</valuable>
-        <service>nestle</service>
+        <organization>nestle</organization>
     </advertising-postcard>
 
     <advertising-postcard id="73">
@@ -135,7 +135,7 @@
         <country>belarus</country>
         <year>2019</year>
         <valuable>thematic</valuable>
-        <service>terra</service>
+        <organization>terra</organization>
     </advertising-postcard>
 
     <advertising-postcard id="85" author="Andrew">
@@ -144,6 +144,6 @@
         <country>england</country>
         <year>2001</year>
         <valuable>collectible</valuable>
-        <service>dodo</service>
+        <organization>dodo</organization>
     </advertising-postcard>
 </old-cards>

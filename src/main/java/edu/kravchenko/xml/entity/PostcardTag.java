@@ -4,15 +4,15 @@ public enum PostcardTag {
     OLD_CARDS,
     GREETING_POSTCARD,
     ADVERTISING_POSTCARD,
+    ID,
+    AUTHOR,
     THEME,
     SENT,
     COUNTRY,
     YEAR,
     VALUABLE,
-    ID,
-    AUTHOR,
     HOLIDAY,
-    SERVICE;
+    ORGANIZATION;
 
     private static final String UNDERSCORE = "_";
     private static final String HYPHEN = "-";

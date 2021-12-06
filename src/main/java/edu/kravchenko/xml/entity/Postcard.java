@@ -3,7 +3,7 @@ package edu.kravchenko.xml.entity;
 import java.time.LocalDateTime;
 
 public abstract class Postcard {
-    private static final String DEFAULT_AUTHOR = "Anonymous";
+    public static final String DEFAULT_AUTHOR = "Anonymous";
     private int id;
     private String author;
     private String theme;

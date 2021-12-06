@@ -1,31 +1,33 @@
 package edu.kravchenko.xml.parser;
 
-import edu.kravchenko.xml.entity.AdvertisingPostcard;
-import edu.kravchenko.xml.entity.GreetingPostcard;
-import edu.kravchenko.xml.entity.Postcard;
-import edu.kravchenko.xml.entity.PostcardTag;
+import edu.kravchenko.xml.entity.*;
 import edu.kravchenko.xml.exception.PostcardException;
+import edu.kravchenko.xml.validator.PostcardXmlValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PostcardDomBuilder implements PostcardBuilder {
     private static final Logger logger = LogManager.getLogger();
     private List<Postcard> postcards = new ArrayList<>();
     private DocumentBuilder docBuilder;
 
-    public PostcardDomBuilder() {
+    public PostcardDomBuilder() throws PostcardException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = factory.newDocumentBuilder();
@@ -49,7 +51,7 @@ public class PostcardDomBuilder implements PostcardBuilder {
         }
     }
 
-    public void createPostcards(Element root, PostcardTag postcardType) {
+    public void createPostcards(Element root, PostcardTag postcardType) throws PostcardException {
         NodeList postcardList = root.getElementsByTagName(postcardType.toString());
         for (int i = 0; i < postcardList.getLength(); i++) {
             Element postcardElement = (Element) postcardList.item(i);
@@ -58,21 +60,48 @@ public class PostcardDomBuilder implements PostcardBuilder {
         }
     }
 
-    private Postcard buildPostcard(Element postcardElement, PostcardTag postcardType) {
+    private Postcard buildPostcard(Element postcardElement, PostcardTag postcardType) throws PostcardException {
         Postcard postcard;
         switch (postcardType) {
             case GREETING_POSTCARD -> {
                 postcard = new GreetingPostcard();
+                String holiday = getElementTextContent(postcardElement, PostcardTag.HOLIDAY.toString());
+                ((GreetingPostcard) postcard).setHoliday(HolidayType.valueOf(holiday.toUpperCase(Locale.ROOT)));
             }
             case ADVERTISING_POSTCARD -> {
                 postcard = new AdvertisingPostcard();
-                postcard.setService("");
+                ((AdvertisingPostcard) postcard)
+                        .setOrganization(getElementTextContent(postcardElement, PostcardTag.ORGANIZATION.toString()));
             }
-            default:
-                lo
-
+            default -> {
+                throw new PostcardException("invalid tag");
+            }
         }
+        String data = postcardElement.getAttribute(PostcardTag.ID.toString());
+        postcard.setId(Integer.parseInt(data));
+        data = postcardElement.getAttribute(PostcardTag.AUTHOR.toString());
+        if (data.isBlank()) {
+            postcard.setAuthor(Postcard.DEFAULT_AUTHOR);
+        } else {
+            postcard.setAuthor(data);
+        }
+        data = getElementTextContent(postcardElement, PostcardTag.THEME.toString());
+        postcard.setTheme(data);
+        data = getElementTextContent(postcardElement, PostcardTag.SENT.toString());
+        postcard.setSent(Boolean.parseBoolean(data));
+        data = getElementTextContent(postcardElement, PostcardTag.COUNTRY.toString());
+        postcard.setCountry(CountryType.valueOf(data.toUpperCase(Locale.ROOT)));
+        data = getElementTextContent(postcardElement, PostcardTag.YEAR.toString());
+        postcard.setYear(LocalDateTime.parse(data));
+        data = getElementTextContent(postcardElement, PostcardTag.VALUABLE.toString());
+        postcard.setValuable(ValuableType.valueOf(data.toUpperCase(Locale.ROOT)));
         return postcard;
+    }
+
+    private String getElementTextContent(Element element, String elementName) {
+        NodeList nList = element.getElementsByTagName(elementName);
+        Node node = nList.item(0);
+        return node.getTextContent();
     }
 
     @Override
