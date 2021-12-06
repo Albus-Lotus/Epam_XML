@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<old-cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.example.com/postcards"
+           xsi:schemaLocation="http://www.example.com/postcards postcards.xsd">
+
+    <greeting-postcard id="10">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>belarus</country>
+        <year>2001</year>
+        <valuable>thematic</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="13" author="Polina">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>collectible</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="16">
+        <theme>sport</theme>
+        <sent>true</sent>
+        <country>belarus</country>
+        <year>2001</year>
+        <valuable>thematic</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="17">
+        <theme>landscape</theme>
+        <sent>true</sent>
+        <country>belarus</country>
+        <year>1998</year>
+        <valuable>thematic</valuable>
+        <holiday>thanksgiving</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="19" author="Nikita">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>belarus</country>
+        <year>2001</year>
+        <valuable>thematic</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="31">
+        <theme>nature</theme>
+        <sent>true</sent>
+        <country>china</country>
+        <year>2001</year>
+        <valuable>historical</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="33" author="Maria">
+        <theme>city</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <year>1994</year>
+        <valuable>collectible</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="44">
+        <theme>animals</theme>
+        <sent>true</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>thematic</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <advertising-postcard id="46" author="Cate">
+        <theme>health</theme>
+        <sent>true</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>thematic</valuable>
+        <service>pharmacy</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="48">
+        <theme>health</theme>
+        <sent>true</sent>
+        <country>belarus</country>
+        <year>2001</year>
+        <valuable>collectible</valuable>
+        <service>pharmacy</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="51" author="Snowman">
+        <theme>health</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <year>1995</year>
+        <valuable>thematic</valuable>
+        <service>pharmacy</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="57">
+        <theme>cars</theme>
+        <sent>true</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>historical</valuable>
+        <service>bmw</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="63">
+        <theme>chocolate</theme>
+        <sent>true</sent>
+        <country>england</country>
+        <year>1956</year>
+        <valuable>collectible</valuable>
+        <service>milka</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="67" author="Yan">
+        <theme>chocolate</theme>
+        <sent>true</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>collectible</valuable>
+        <service>nestle</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="73">
+        <theme>pizza</theme>
+        <sent>true</sent>
+        <country>belarus</country>
+        <year>2019</year>
+        <valuable>thematic</valuable>
+        <service>terra</service>
+    </advertising-postcard>
+
+    <advertising-postcard id="85" author="Andrew">
+        <theme>pizza</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>collectible</valuable>
+        <service>dodo</service>
+    </advertising-postcard>
+</old-cards>
