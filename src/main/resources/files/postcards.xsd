@@ -22,7 +22,7 @@
          <element name="theme" type="tns:Theme"/>
          <element name="sent" type="boolean"/>
          <element name="country" type="tns:Country"/>
-         <element name="year" type="gYear"/>
+         <element name="sent-date" type="dateTime"/>
          <element name="valuable" type="tns:Valuable"/>
       </sequence>
       <attribute name="id" type="tns:Id" use="required"/>

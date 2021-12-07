@@ -9,20 +9,20 @@ public abstract class Postcard {
     private String theme;
     private boolean sent;
     private CountryType country;
-    private LocalDateTime year;
+    private LocalDateTime sentDate;
     private ValuableType valuable;
 
     public Postcard() {
     }
 
     public Postcard(int id, String theme, boolean sent, CountryType country,
-                    LocalDateTime year, ValuableType valuable) {
+                    LocalDateTime sentDate, ValuableType valuable) {
         this.id = id;
         this.author = DEFAULT_AUTHOR;
         this.theme = theme;
         this.sent = sent;
         this.country = country;
-        this.year = year;
+        this.sentDate = sentDate;
         this.valuable = valuable;
     }
 
@@ -66,12 +66,12 @@ public abstract class Postcard {
         this.country = country;
     }
 
-    public LocalDateTime getYear() {
-        return year;
+    public LocalDateTime getSentDate() {
+        return sentDate;
     }
 
-    public void setYear(LocalDateTime year) {
-        this.year = year;
+    public void setSentDate(LocalDateTime sentDate) {
+        this.sentDate = sentDate;
     }
 
     public ValuableType getValuable() {
@@ -89,9 +89,9 @@ public abstract class Postcard {
         Postcard postcard = (Postcard) o;
         return sent == postcard.sent
                 && author.equals(postcard.author)
-                && theme == postcard.theme
+                && theme.equals(postcard.theme)
                 && country == postcard.country
-                && year == postcard.year
+                && sentDate.equals(sentDate)
                 && valuable == postcard.valuable;
     }
 
@@ -102,7 +102,7 @@ public abstract class Postcard {
         result = 31 * result + theme.hashCode();
         result = 31 * result + (sent ? 1 : 0);
         result = 31 * result + country.hashCode();
-        result = 31 * result + year.hashCode();
+        result = 31 * result + sentDate.hashCode();
         result = 31 * result + valuable.hashCode();
         return result;
     }
@@ -110,12 +110,12 @@ public abstract class Postcard {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Postcard{");
-        sb.append("id='").append(id);
-        sb.append(", author").append(author);
-        sb.append(", theme='").append(theme);
-        sb.append(", sent='").append(sent);
+        sb.append("id=").append(id);
+        sb.append(", author=").append(author);
+        sb.append(", theme=").append(theme);
+        sb.append(", sent=").append(sent);
         sb.append(", country=").append(country);
-        sb.append(", year=").append(year.getYear());
+        sb.append(", sentDate=").append(sentDate);
         sb.append(", valuable=").append(valuable);
         sb.append('}');
         return sb.toString();

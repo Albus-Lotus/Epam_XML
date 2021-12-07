@@ -9,7 +9,7 @@ public enum PostcardTag {
     THEME,
     SENT,
     COUNTRY,
-    YEAR,
+    SENT_DATE,
     VALUABLE,
     HOLIDAY,
     ORGANIZATION;

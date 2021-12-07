@@ -7,7 +7,7 @@
         <theme>landscape</theme>
         <sent>false</sent>
         <country>belarus</country>
-        <year>2001</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -16,7 +16,7 @@
         <theme>landscape</theme>
         <sent>false</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>1998-11-17T06:00:00</sent-date>
         <valuable>collectible</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -25,7 +25,7 @@
         <theme>sport</theme>
         <sent>true</sent>
         <country>belarus</country>
-        <year>2001</year>
+        <sent-date>2001-01-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -34,7 +34,7 @@
         <theme>landscape</theme>
         <sent>true</sent>
         <country>belarus</country>
-        <year>1998</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <holiday>thanksgiving</holiday>
     </greeting-postcard>
@@ -43,7 +43,7 @@
         <theme>landscape</theme>
         <sent>false</sent>
         <country>belarus</country>
-        <year>2001</year>
+        <sent-date>2001-11-03T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -52,7 +52,7 @@
         <theme>nature</theme>
         <sent>true</sent>
         <country>china</country>
-        <year>2001</year>
+        <sent-date>1994-11-17T08:00:00</sent-date>
         <valuable>historical</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -61,7 +61,7 @@
         <theme>city</theme>
         <sent>false</sent>
         <country>england</country>
-        <year>1994</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>collectible</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -70,7 +70,7 @@
         <theme>animals</theme>
         <sent>true</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>1994-10-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <holiday>christmas</holiday>
     </greeting-postcard>
@@ -79,16 +79,16 @@
         <theme>health</theme>
         <sent>true</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
-        <service>pharmacy</service>
+        <organization>pharmacy</organization>
     </advertising-postcard>
 
     <advertising-postcard id="48">
         <theme>health</theme>
         <sent>true</sent>
         <country>belarus</country>
-        <year>2001</year>
+        <sent-date>2001-11-13T06:00:00</sent-date>
         <valuable>collectible</valuable>
         <organization>pharmacy</organization>
     </advertising-postcard>
@@ -97,7 +97,7 @@
         <theme>health</theme>
         <sent>false</sent>
         <country>england</country>
-        <year>1995</year>
+        <sent-date>2001-11-17T09:00:00</sent-date>
         <valuable>thematic</valuable>
         <organization>pharmacy</organization>
     </advertising-postcard>
@@ -106,7 +106,7 @@
         <theme>cars</theme>
         <sent>true</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>historical</valuable>
         <organization>bmw</organization>
     </advertising-postcard>
@@ -115,7 +115,7 @@
         <theme>chocolate</theme>
         <sent>true</sent>
         <country>england</country>
-        <year>1956</year>
+        <sent-date>2001-10-17T06:00:00</sent-date>
         <valuable>collectible</valuable>
         <organization>milka</organization>
     </advertising-postcard>
@@ -124,7 +124,7 @@
         <theme>chocolate</theme>
         <sent>true</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>2001-11-17T06:00:00</sent-date>
         <valuable>collectible</valuable>
         <organization>nestle</organization>
     </advertising-postcard>
@@ -133,7 +133,7 @@
         <theme>pizza</theme>
         <sent>true</sent>
         <country>belarus</country>
-        <year>2019</year>
+        <sent-date>2001-10-17T06:00:00</sent-date>
         <valuable>thematic</valuable>
         <organization>terra</organization>
     </advertising-postcard>
@@ -142,7 +142,7 @@
         <theme>pizza</theme>
         <sent>false</sent>
         <country>england</country>
-        <year>2001</year>
+        <sent-date>2001-11-09T08:00:00</sent-date>
         <valuable>collectible</valuable>
         <organization>dodo</organization>
     </advertising-postcard>
