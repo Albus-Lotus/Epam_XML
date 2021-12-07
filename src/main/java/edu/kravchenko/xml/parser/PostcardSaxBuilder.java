@@ -1,6 +1,5 @@
 package edu.kravchenko.xml.parser;
 
-import edu.kravchenko.xml.exception.PostcardException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

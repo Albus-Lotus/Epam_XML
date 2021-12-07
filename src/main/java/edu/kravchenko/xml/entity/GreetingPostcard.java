@@ -1,7 +1,6 @@
 package edu.kravchenko.xml.entity;
 
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 public class GreetingPostcard extends Postcard {
     private HolidayType holiday;

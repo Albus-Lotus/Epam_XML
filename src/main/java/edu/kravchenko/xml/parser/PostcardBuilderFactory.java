@@ -1,9 +1,5 @@
 package edu.kravchenko.xml.parser;
 
-import edu.kravchenko.xml.exception.PostcardException;
-
-import java.util.Locale;
-
 public class PostcardBuilderFactory {
     private static final PostcardBuilderFactory INSTANCE = new PostcardBuilderFactory();
 

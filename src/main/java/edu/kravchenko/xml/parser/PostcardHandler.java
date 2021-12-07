@@ -5,7 +5,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 public class PostcardHandler extends DefaultHandler {
     private static final char HYPHEN = '-';

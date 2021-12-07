@@ -91,7 +91,7 @@ public abstract class Postcard {
                 && author.equals(postcard.author)
                 && theme.equals(postcard.theme)
                 && country == postcard.country
-                && sentDate.equals(sentDate)
+                && sentDate.equals(postcard.sentDate)
                 && valuable == postcard.valuable;
     }
 

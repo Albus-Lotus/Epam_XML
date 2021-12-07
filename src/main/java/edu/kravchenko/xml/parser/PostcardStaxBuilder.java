@@ -45,7 +45,7 @@ public class PostcardStaxBuilder extends PostcardBuilder {
             }
         } catch (XMLStreamException e) {
             logger.log(Level.ERROR, "Error while parsing file {}; message {}", filePath, e.getMessage());
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             logger.log(Level.ERROR, "Error while finding file {}; message {}", filePath, e.getMessage());
         } catch (IOException e) {
             logger.log(Level.ERROR, "Error while reading file {}; message {}", filePath, e.getMessage());
@@ -71,7 +71,7 @@ public class PostcardStaxBuilder extends PostcardBuilder {
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT -> {
                     name = reader.getLocalName().toUpperCase(Locale.ROOT).replace(HYPHEN, UNDERSCORE);
-                    buildPostcardProperties(reader, postcard);
+                    buildPostcardProperties(reader, name, postcard);
                 }
                 case XMLStreamConstants.END_ELEMENT -> {
                     name = reader.getLocalName();
@@ -80,17 +80,13 @@ public class PostcardStaxBuilder extends PostcardBuilder {
                         return postcard;
                     }
                 }
-                default -> {
-                    throw new XMLStreamException("Unknown element in tag <postcard>");
-                }
             }
         }
         throw new XMLStreamException("Unknown element in tag <postcard>");
     }
 
-    private void buildPostcardProperties(XMLStreamReader reader, Postcard postcard) throws XMLStreamException {
+    private void buildPostcardProperties(XMLStreamReader reader, String name, Postcard postcard) throws XMLStreamException {
         String data = getXMLText(reader);
-        String name = reader.getLocalName().toUpperCase(Locale.ROOT).replace(HYPHEN, UNDERSCORE);
         switch (PostcardTag.valueOf(name)) {
             case THEME -> postcard.setTheme(data);
             case SENT -> postcard.setSent(Boolean.parseBoolean(data));

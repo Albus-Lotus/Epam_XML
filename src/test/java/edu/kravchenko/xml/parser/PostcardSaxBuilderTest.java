@@ -13,7 +13,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PostcardSaxBuilder {
+public class PostcardSaxBuilderTest {
     private static PostcardBuilder postcardSaxBuilder;
     private static final Set<Postcard> expected = new HashSet<>();
 
@@ -61,7 +61,6 @@ public class PostcardSaxBuilder {
         String filePath = file.getAbsolutePath();
         postcardSaxBuilder.buildPostcards(filePath);
         Set<Postcard> actual = postcardSaxBuilder.getPostcards();
-        assertEquals(expected, actual);
-        //assertThat(actual).containsExactlyElementsOf(expected);
+        assertThat(actual).containsExactlyElementsOf(expected);
     }
 }
