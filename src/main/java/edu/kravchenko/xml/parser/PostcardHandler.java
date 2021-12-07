@@ -64,7 +64,7 @@ public class PostcardHandler extends DefaultHandler {
                 case THEME -> current.setTheme(data);
                 case SENT -> current.setSent(Boolean.parseBoolean(data));
                 case COUNTRY -> current.setCountry(CountryType.valueOf(data.toUpperCase(Locale.ROOT)));
-                case YEAR -> current.setYear(LocalDateTime.parse(data));
+                case SENT_DATE -> current.setSentDate(LocalDateTime.parse(data));
                 case VALUABLE -> current.setValuable(ValuableType.valueOf(data.toUpperCase(Locale.ROOT)));
                 case HOLIDAY -> ((GreetingPostcard) current)
                         .setHoliday(HolidayType.valueOf(data.toUpperCase(Locale.ROOT)));

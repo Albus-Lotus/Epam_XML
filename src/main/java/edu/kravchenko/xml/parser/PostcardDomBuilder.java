@@ -16,8 +16,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public class PostcardDomBuilder extends PostcardBuilder {
@@ -46,6 +44,7 @@ public class PostcardDomBuilder extends PostcardBuilder {
         } catch (SAXException e) {
             logger.log(Level.ERROR, "Error while parsing file {}; message {}", filePath, e.getMessage());
         }
+        logger.log(Level.INFO, "file were successfully parsed by DOM");
     }
 
     public void createPostcards(Element root, PostcardTag postcardType) throws PostcardException {
@@ -70,9 +69,7 @@ public class PostcardDomBuilder extends PostcardBuilder {
                 ((AdvertisingPostcard) postcard)
                         .setOrganization(getElementTextContent(postcardElement, PostcardTag.ORGANIZATION.toString()));
             }
-            default -> {
-                throw new PostcardException("invalid tag");
-            }
+            default -> throw new PostcardException("invalid tag");
         }
         String data = postcardElement.getAttribute(PostcardTag.ID.toString());
         postcard.setId(Integer.parseInt(data));
@@ -88,8 +85,8 @@ public class PostcardDomBuilder extends PostcardBuilder {
         postcard.setSent(Boolean.parseBoolean(data));
         data = getElementTextContent(postcardElement, PostcardTag.COUNTRY.toString());
         postcard.setCountry(CountryType.valueOf(data.toUpperCase(Locale.ROOT)));
-        data = getElementTextContent(postcardElement, PostcardTag.YEAR.toString());
-        postcard.setYear(LocalDateTime.parse(data));
+        data = getElementTextContent(postcardElement, PostcardTag.SENT_DATE.toString());
+        postcard.setSentDate(LocalDateTime.parse(data));
         data = getElementTextContent(postcardElement, PostcardTag.VALUABLE.toString());
         postcard.setValuable(ValuableType.valueOf(data.toUpperCase(Locale.ROOT)));
         return postcard;

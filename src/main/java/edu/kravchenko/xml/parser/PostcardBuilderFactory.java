@@ -6,16 +6,12 @@ import java.util.Locale;
 
 public class PostcardBuilderFactory {
     private static final PostcardBuilderFactory INSTANCE = new PostcardBuilderFactory();
-    private enum ParserType {
-        SAX, STAX, DOM
-    }
 
     private PostcardBuilderFactory() {
     }
 
-    public PostcardBuilder getPostcardBuilder(String parserType) throws PostcardException {
-        ParserType type = ParserType.valueOf(parserType.toUpperCase(Locale.ROOT));
-        switch (type) {
+    public PostcardBuilder getPostcardBuilder(ParserType parserType) {
+        switch (parserType) {
             case SAX -> {
                 return new PostcardSaxBuilder();
             }
@@ -27,7 +23,7 @@ public class PostcardBuilderFactory {
             }
             default -> {
                 throw new EnumConstantNotPresentException(
-                        type.getDeclaringClass(), type.name());
+                        parserType.getDeclaringClass(), parserType.name());
             }
         }
     }

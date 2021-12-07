@@ -15,7 +15,7 @@ import java.io.IOException;
 public class PostcardSaxBuilder extends PostcardBuilder {
     private static final Logger logger = LogManager.getLogger();
 
-    public PostcardSaxBuilder() throws PostcardException {
+    public PostcardSaxBuilder() {
     }
 
     @Override
@@ -36,5 +36,6 @@ public class PostcardSaxBuilder extends PostcardBuilder {
         } catch (ParserConfigurationException e) {
             logger.log(Level.ERROR, "Error while configuration; message {}", e.getMessage());
         }
+        logger.log(Level.INFO, "file were successfully parsed by SAX");
     }
 }
