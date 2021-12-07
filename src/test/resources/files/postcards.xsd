@@ -1,0 +1,103 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="http://www.example.com/postcards"
+   xmlns:tns="http://www.example.com/postcards"
+   elementFormDefault="qualified">
+
+   <element name="old-cards" type="tns:OldCards"/>
+
+   <element name="postcard" type="tns:Postcard" abstract="true"/>
+   <element name="greeting-postcard" type="tns:GreetingPostcard" substitutionGroup="tns:postcard"/>
+   <element name="advertising-postcard" type="tns:AdvertisingPostcard" substitutionGroup="tns:postcard"/>
+   
+   <complexType name="OldCards">
+      <sequence>
+         <element ref="tns:postcard" minOccurs="1" maxOccurs="unbounded"/>
+      </sequence>
+   </complexType>
+
+   <complexType name="Postcard">
+      <sequence>
+         <element name="theme" type="tns:Theme"/>
+         <element name="sent" type="boolean"/>
+         <element name="country" type="tns:Country"/>
+         <element name="sent-date" type="dateTime"/>
+         <element name="valuable" type="tns:Valuable"/>
+      </sequence>
+      <attribute name="id" type="tns:Id" use="required"/>
+      <attribute name="author" type="tns:Author" use="optional" default="Anonymous"/>
+   </complexType>
+
+   <complexType name="GreetingPostcard">
+      <complexContent>
+         <extension base="tns:Postcard">
+            <sequence>
+               <element name="holiday" type="tns:Holiday"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <complexType name="AdvertisingPostcard">
+      <complexContent>
+         <extension base="tns:Postcard">
+            <sequence>
+               <element name="organization" type="tns:Organization"/>
+            </sequence>
+         </extension>
+      </complexContent>
+   </complexType>
+
+   <simpleType name="Theme">
+      <restriction base="string">
+         <minLength value="3"/>
+         <maxLength value="30"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Country">
+      <restriction base="string">
+         <enumeration value="belarus"/>
+         <enumeration value="england"/>
+         <enumeration value="china"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Valuable">
+      <restriction base="string">
+         <enumeration value="historical"/>
+         <enumeration value="collectible"/>
+         <enumeration value="thematic"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Id">
+      <restriction base="int">
+         <pattern value="\d{2}"/>
+         <minExclusive value="0"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Author">
+      <restriction base="string">
+         <minLength value="2"/>
+         <maxLength value="40"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Holiday">
+      <restriction base="string">
+         <enumeration value="christmas"/>
+         <enumeration value="birthday"/>
+         <enumeration value="thanksgiving"/>
+      </restriction>
+   </simpleType>
+
+   <simpleType name="Organization">
+      <restriction base="string">
+         <minLength value="3"/>
+         <maxLength value="20"/>
+      </restriction>
+   </simpleType>
+</schema>

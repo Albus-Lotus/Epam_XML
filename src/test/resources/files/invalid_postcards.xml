@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<old-cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.example.com/postcards"
+           xsi:schemaLocation="http://www.example.com/postcards postcards.xsd">
+
+    <greeting-postcard id="10">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>belarus</country>
+        <year>2001</year>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <postcard id="13" author="Polina">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <year>2001</year>
+        <valuable>collectible</valuable>
+        <holiday>christmas</holiday>
+    </postcard>
+</old-cards>

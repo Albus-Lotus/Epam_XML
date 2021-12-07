@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<old-cards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.example.com/postcards"
+           xsi:schemaLocation="http://www.example.com/postcards postcards.xsd">
+
+    <greeting-postcard id="10">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>belarus</country>
+        <sent-date>2001-11-17T06:00:00</sent-date>
+        <valuable>thematic</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <greeting-postcard id="13" author="Polina">
+        <theme>landscape</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <sent-date>1998-11-17T06:00:00</sent-date>
+        <valuable>collectible</valuable>
+        <holiday>christmas</holiday>
+    </greeting-postcard>
+
+    <advertising-postcard id="85" author="Andrew">
+        <theme>pizza</theme>
+        <sent>false</sent>
+        <country>england</country>
+        <sent-date>2001-11-09T08:00:00</sent-date>
+        <valuable>collectible</valuable>
+        <organization>dodo</organization>
+    </advertising-postcard>
+</old-cards>
